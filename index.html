@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kyla 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffb6d5, #ffe6f0, #ffcae0);
+  overflow-x: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 30px 22px;
+  background: rgba(255,255,255,0.9);
+  border: 3px solid white;
+  border-radius: 28px;
+  box-shadow: 0 10px 35px #d84e8a55;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.big-heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+}
+
+h1 {
+  color: #ed4b91;
+  font-size: 34px;
+}
+
+p {
+  color: #97466a;
+  line-height: 1.8;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 23px;
+  margin: 8px;
+  background: #ff5c9c;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 12px #ff5c9c44;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#letter {
+  display: none;
+  margin-top: 22px;
+  animation: appear 1s ease;
+}
+
+.signature {
+  color: #ed4b91;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  pointer-events: none;
+  animation: float 7s linear forwards;
+  z-index: 1;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.15); }
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="big-heart">💗</div>
+
+  <p>A little message made just for you...</p>
+
+  <h1>Hi, Kyla! 🌷</h1>
+
+  <p>
+    I have a little secret I've been wanting
+    to tell you. Are you ready? 🥹💕
+  </p>
+
+  <button id="openBtn" onclick="openLetter()">
+    Open My Letter 💌
+  </button>
+
+  <div id="letter">
+    <h2 style="color:#ed4b91">Dear Kyla, 💖</h2>
+
+    <p>
+      I've been wanting to tell you something
+      for a while, and today, I finally found
+      the courage to say it.
+    </p>
+
+    <p>
+      You have this special way of making
+      ordinary moments feel a little more
+      beautiful. Even a simple thought of you
+      can bring a smile to my face. 🌸
+    </p>
+
+    <p>
+      So, here it is...
+      <br>
+      <strong>I LIKE YOU, KYLA! 💗</strong>
+    </p>
+
+    <p>
+      I'm not saying this to pressure you or
+      make you feel obligated to like me back.
+      I just want to be honest about my feelings.
+      Whatever your answer is, I'll respect it.
+    </p>
+
+    <p>
+      Maybe this is the beginning of something
+      beautiful, or maybe this will simply be
+      a sweet memory. Either way, I'm glad
+      I got to tell you. 🫶
+    </p>
+
+    <p class="signature">
+      Yours Truly,<br>
+      Riel 💕
+    </p>
+
+    <p>Thank you for reading my little confession! 🌷</p>
+
+    <div style="font-size:35px">💗🌸💗</div>
+  </div>
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+  document.getElementById("openBtn").textContent =
+    "You opened my heart 💖";
+  document.getElementById("openBtn").disabled = true;
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+
+  const emojis = ["💗", "💕", "💖", "🌸", "💘"];
+  heart.textContent = emojis[
+    Math.floor(Math.random() * emojis.length)
+  ];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (18 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 8500);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
